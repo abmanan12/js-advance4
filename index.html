@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+
+    <script>
+
+        // EXAMPLE # 1
+        // 1) before callback
+        // function fun1() {
+        //     setTimeout(() => {
+        //         console.log('Hey! I am Function 1');
+        //     }, 2000)
+        // }
+        // function fun2() {
+        //     console.log('Hey! I am Function 2');
+        // }
+        // fun1()
+        // fun2()
+
+        // 2) after callback
+        // function fun11(funName, callback) {
+        //     setTimeout(() => {
+        //         console.log(`Hey! I am ${funName}`);
+        //         callback()
+        //     }, 2000)
+        // }
+        // function fun22() {
+        //     console.log('Hey! I am Function 2');
+        // }
+        // fun11('Function 1', fun22)
+
+
+        // EXAMPLE # 2
+        let students = [
+            { name: 'Ali', city: 'Shk', age: 22 },
+            { name: 'Ahmad', city: 'Sng', age: 25 },
+            { name: 'Abdullah', city: 'Lhr', age: 23 },
+        ]
+
+        // 1) before callback
+        // function func1() {
+        //     setTimeout(() => {
+        //         console.log('Starting Function 1');
+        //     }, 3000)
+        // }
+        // function func2() {
+        //     console.log('Starting Function 2');
+        //     func1()
+        //     console.log('Ending Function 2');
+        // }
+        // func2()
+
+        // 2) before callback 
+        // function func11(students) {
+        //     setTimeout(() => {
+        //         let a = { name: 'Arslan', city: 'Fsd', age: 24 }
+        //         students.push(a)
+        //         console.log(students);
+        //     }, 3000)
+        // }
+        // function func22(students) {
+        //     for (const x of students) {
+        //         console.log(x.name);
+        //     }
+        // }
+        // func11(students)
+        // func22(students)
+
+        // 3) after Callback
+        function func111(callbackFunc222) {
+            setTimeout(() => {
+                let student = { name: 'Arslan', city: 'Fsd', age: 24 }
+                students.push(student)
+                console.log('Student data has been added!');
+                callbackFunc222(students)
+            }, 3000)
+        }
+        function func222(args) {
+            args.forEach(curElem => {
+                console.log(curElem.name);
+            })
+        }
+
+        func111(func222);
+
+
+    </script>
+
+</head>
+
+<body>
+    <div style="text-align: center; margin-top: 40px;">
+        <h2>JavaScript Callback Function</h2>
+        <p>(Go to console to check output)</p>
+    </div>
+
+    <div style="padding: 40px;">
+        <h4>Callback Function:</h4>
+        <p>Before Callback function, as we know JavaScript is an event driven language. This means that instead of
+            waiting for a response before moving on, Js will keep executing while listening for other events.
+        JavaScript is synchronous and single threaded-language.</p>
+        <p><b>Callback Function</b> is a way that make sure certain code doesn't execute while other code has already
+            finished execution.</p>
+        <p>Any function that is passed as an argument is called <b>Callback Function</b>.</p>
+        <p>A Callback Function that is to be axecuted after another function has finished executing.</p>
+    </div>
+</body>
+
+</html>
