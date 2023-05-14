@@ -1,0 +1,24 @@
+# js-advance4
+
+JavaScript CallBack Function
+
+JavaScript:
+==========
+
+==> Before Callback function, as we know JavaScript is an event driven language.This means that 
+instead of waiting for a response before moving on, Js will keep executing while 
+listening for other events.
+
+==> JavaScript is synchronous and single threaded-language.
+
+
+
+Callback Function:
+=================
+
+==> Callback Function is a way that make sure certain code doesn't execute while 
+other code has already finished execution.
+
+==> Any function that is passed as an argument is called Callback Function.
+
+==> A Callback Function that is to be axecuted after another function has finished executing.
